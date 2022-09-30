@@ -21,7 +21,7 @@ import (
 
 //err define
 var (
-	ErrGRPCSvcDescMissing = errors.New("must use server.WithRPCServiceDesc to set desc")
+	ErrGRPCSvcDescMissing = errors.New("must use server_test.WithRPCServiceDesc to set desc")
 	ErrGRPCSvcType        = errors.New("must set *grpc.ServiceDesc")
 )
 
@@ -30,7 +30,7 @@ const (
 	Name = "grpc"
 )
 
-//Server is grpc server holder
+//Server is grpc server_test holder
 type Server struct {
 	s    *grpc.Server
 	opts server.Options
@@ -58,7 +58,7 @@ func Request2Invocation(ctx context.Context, req interface{}, info *grpc.UnarySe
 	return inv
 }
 
-//New create grpc server
+//New create grpc server_test
 func New(opts server.Options) server.ProtocolServer {
 	interceptor := func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handle grpc.UnaryHandler) (resp interface{}, err error) {
 		c, err := handler.GetChain(common.Provider, opts.ChainName)
@@ -104,7 +104,7 @@ func (s *Server) Register(schema interface{}, options ...server.RegisterOption) 
 	return "", nil
 }
 
-//Start launch the server
+//Start launch the server_test
 func (s *Server) Start() error {
 	listener, host, port, lisErr := iputil.StartListener(s.opts.Address, s.opts.TLSConfig)
 	if lisErr != nil {
@@ -122,13 +122,13 @@ func (s *Server) Start() error {
 	return nil
 }
 
-//Stop gracfully shutdown grpc server
+//Stop gracfully shutdown grpc server_test
 func (s *Server) Stop() error {
 	s.s.GracefulStop()
 	return nil
 }
 
-//String return server name
+//String return server_test name
 func (s *Server) String() string {
 	return Name
 }

@@ -8,7 +8,7 @@ import (
 	_ "golang-demo/initialize"
 )
 
-//if you use go run main.go instead of binary run, plz export CHASSIS_HOME=/{path}/{to}/rest/server/
+//if you use go run main.go instead of binary run, plz export CHASSIS_HOME=/{path}/{to}/rest/server_test/
 func main() {
 	api := grpc.Init()
 	api.Register()
