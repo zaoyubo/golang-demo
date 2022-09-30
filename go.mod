@@ -8,6 +8,7 @@ require (
 	github.com/go-chassis/openlog v1.1.3
 	github.com/go-playground/validator/v10 v10.11.1
 	github.com/json-iterator/go v1.1.12
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	google.golang.org/grpc v1.38.0
 	gorm.io/driver/mysql v1.3.6
 	gorm.io/gen v0.3.16
